@@ -1,3 +1,5 @@
 streamlit
 openai
 opencv-python-headless
+opencv-python-headless
+xlsxwriter
