@@ -39,8 +39,8 @@ def create_indexed_excel(folder_url, cols_cnt):
                 import shutil
                 shutil.rmtree(output_dir)
             
-            # 하위 폴더까지 전부 가져오기 위해 remaining=True 사용
-            gdown.download_folder(id=folder_id, output=output_dir, quiet=True, remaining=True)
+            # gdown 최신 버전에 맞춰 remaining 옵션 제거
+            gdown.download_folder(id=folder_id, output=output_dir, quiet=True)
     except Exception as e:
         st.error(f"구글 드라이브 연결 실패: {e}\n폴더가 '링크가 있는 모든 사용자'에게 공개되어 있는지 확인해 주세요.")
         return None
