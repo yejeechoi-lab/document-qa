@@ -1,0 +1,394 @@
+<title>라보에이치 GLP-1 메타 배너 SB</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500;700;800;900&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: 단일 컬럼 기획 문서. 상단 개요 → 소구점별 카드(목업 + 카피표) → 포맷 구성 → 집행 체크리스트 */
+:root{
+  --bg:#f3f6f4; --paper:#ffffff; --ink:#111816; --muted:#5b6a64; --line:#d9e2de;
+  --brand:#0b7a4b; --neon:#22e08a; --deep:#0c2a1f; --warn:#b4531a; --warn-bg:#fff3ea;
+  --chip:#e5f4ec;
+  --f-display:"Gothic A1","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0d1311; --paper:#151d1a; --ink:#e8efec; --muted:#9aaaa3; --line:#2a3632;
+  --brand:#3fcf8e; --neon:#22e08a; --deep:#0c2a1f; --warn:#f0a16b; --warn-bg:#2b1d14; --chip:#163428; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1311; --paper:#151d1a; --ink:#e8efec; --muted:#9aaaa3; --line:#2a3632;
+  --brand:#3fcf8e; --neon:#22e08a; --deep:#0c2a1f; --warn:#f0a16b; --warn-bg:#2b1d14; --chip:#163428; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding-block:40px 80px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;flex-direction:column;gap:48px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.25}
+h1{font-size:clamp(28px,4.4vw,42px);font-weight:900;letter-spacing:-.02em}
+h2{font-size:24px;font-weight:800;letter-spacing:-.01em}
+h3{font-size:17px;font-weight:800}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
+.muted{color:var(--muted)}
+section{display:flex;flex-direction:column;gap:20px}
+.sec-head{display:flex;flex-direction:column;gap:6px;border-top:2px solid var(--ink);padding-top:14px}
+
+/* header */
+header{display:flex;flex-direction:column;gap:14px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--chip);color:var(--brand)}
+
+/* summary grid */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.box ul{margin:0;padding-left:18px}
+.key{background:var(--deep);color:#e8fff3;border-radius:12px;padding:22px 24px;display:flex;flex-direction:column;gap:12px}
+.key .q{font-family:var(--f-display);font-weight:800;font-size:clamp(18px,2.4vw,24px);line-height:1.4}
+.key .q mark{background:var(--neon);color:#06140d;padding:0 6px}
+.key small{color:#9fd8bb;font-size:12px}
+
+/* angle cards */
+.angle{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:28px}
+@media (max-width:760px){.angle{grid-template-columns:1fr;padding:18px}}
+.angle-head{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px}
+.angle-head .no{font-family:var(--f-mono);font-size:13px;color:var(--paper);background:var(--ink);padding:2px 8px;border-radius:4px}
+.prio{font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px;border:1px solid var(--brand);color:var(--brand)}
+.prio.sub{border-color:var(--muted);color:var(--muted)}
+.copy{display:flex;flex-direction:column;gap:16px;min-width:0}
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line)}
+th{font-size:12px;color:var(--muted);font-weight:600;white-space:nowrap}
+td.lab{font-weight:700;white-space:nowrap;color:var(--brand);width:84px}
+.opt{display:flex;flex-direction:column;gap:4px}
+.opt span{display:block}
+.opt b{font-family:var(--f-mono);font-weight:500;color:var(--muted);font-size:12px;margin-right:6px}
+.visual{font-size:13.5px;background:var(--bg);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.visual strong{font-size:12px;color:var(--muted)}
+.flag{font-size:12.5px;color:var(--warn);background:var(--warn-bg);border-radius:6px;padding:8px 12px}
+
+/* ===== banner mockup (4:5) ===== */
+.mock-col{display:flex;flex-direction:column;gap:8px;container-type:inline-size;min-width:0}
+.mock-cap{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+.bn{box-sizing:border-box;position:relative;width:100%;max-width:100%;aspect-ratio:4/5;border-radius:6px;overflow:hidden;
+  font-family:var(--f-display);color:#0d1a14;background:linear-gradient(180deg,#eef3f1 0%,#d7e3de 100%);
+  display:flex;flex-direction:column;padding:7cqw 7cqw 0;gap:2.4cqw;box-shadow:0 1px 0 var(--line)}
+.bn.dark{background:radial-gradient(120% 80% at 50% 110%,#0f6a43 0%,#0a1f17 60%);color:#f2fff8}
+.bn.green{background:linear-gradient(180deg,#0b7a4b 0%,#095c39 100%);color:#fff}
+.bn .badge{align-self:flex-start;font-size:3.4cqw;font-weight:800;background:#0d1a14;color:var(--neon);padding:1.2cqw 2.6cqw;border-radius:1cqw;letter-spacing:.02em}
+.bn.dark .badge,.bn.green .badge{background:var(--neon);color:#06140d}
+.bn .hl{font-size:8.6cqw;font-weight:900;line-height:1.2;letter-spacing:-.03em}
+.bn .hl em{font-style:normal;background:var(--neon);color:#06140d;padding:0 1.2cqw}
+.bn .sub{font-size:4cqw;font-weight:700;opacity:.82;line-height:1.4;font-family:var(--f-body)}
+.bn .stage{flex:1;position:relative;display:flex;align-items:flex-end;justify-content:center;gap:2.4cqw;padding-bottom:13cqw}
+.bn .foot{position:absolute;left:0;right:0;bottom:0;background:#0d1a14;color:#cfe;font-family:var(--f-body);font-size:2.5cqw;padding:2.2cqw 7cqw;display:flex;justify-content:space-between;gap:2cqw}
+.bn .foot b{color:var(--neon);font-weight:700}
+.bn .seal{position:absolute;right:6cqw;top:42%;width:20cqw;height:20cqw;border-radius:50%;background:#fff;color:#0b7a4b;border:0.8cqw solid #0b7a4b;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;font-size:3cqw;line-height:1.15;text-align:center;transform:rotate(-8deg)}
+.bn .seal b{font-size:6.2cqw}
+/* product silhouettes: 샴푸(펌프) · 트리트먼트(튜브) · 헤어앰플(슬림) */
+.p-sh{width:21cqw;height:40cqw;background:linear-gradient(90deg,#fff 0%,#f2f5f4 70%,#dfe6e3 100%);border-radius:4cqw 4cqw 2cqw 2cqw;position:relative;box-shadow:0 2cqw 3cqw rgba(0,0,0,.18)}
+.p-sh::before{content:"";position:absolute;left:50%;top:-9cqw;width:5cqw;height:9cqw;background:#0b7a4b;transform:translateX(-50%);border-radius:1cqw 1cqw 0 0}
+.p-sh::after{content:"LABO-H";position:absolute;left:0;right:0;top:12cqw;text-align:center;font-size:2.8cqw;font-weight:900;color:#0d1a14;letter-spacing:.05em}
+.p-tr{width:13cqw;height:30cqw;background:linear-gradient(90deg,#0d8a55,#0b6b42);border-radius:1.4cqw 1.4cqw 4cqw 4cqw;position:relative;box-shadow:0 2cqw 3cqw rgba(0,0,0,.18)}
+.p-tr::after{content:"";position:absolute;left:2cqw;right:2cqw;top:6cqw;height:7cqw;background:#fff;border-radius:.6cqw}
+.p-am{width:6.5cqw;height:28cqw;background:linear-gradient(90deg,#0d8a55,#0a5e3a);border-radius:3cqw;position:relative;box-shadow:0 2cqw 3cqw rgba(0,0,0,.18)}
+.p-am::before{content:"";position:absolute;left:0;right:0;bottom:0;height:9cqw;background:#5a2a1c;border-radius:0 0 3cqw 3cqw}
+.bn .lbl{position:absolute;bottom:14cqw;font-family:var(--f-body);font-size:2.4cqw;font-weight:700;opacity:.75;display:flex;gap:2.4cqw}
+.bn .bars{display:flex;flex-direction:column;gap:1.6cqw;font-family:var(--f-body)}
+.bn .bar{display:flex;justify-content:space-between;align-items:baseline;border-bottom:.4cqw solid var(--neon);padding-bottom:.6cqw;font-size:3cqw;font-weight:600}
+.bn .bar b{font-family:var(--f-display);font-size:7cqw;font-weight:900;color:var(--neon)}
+.bn .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw;font-family:var(--f-body);font-size:2.8cqw;text-align:center;font-weight:700}
+.bn .steps div{background:rgba(255,255,255,.12);border-radius:1.4cqw;padding:1.6cqw 1cqw}
+.bn .steps i{display:block;font-style:normal;font-family:var(--f-display);font-size:4cqw;color:var(--neon)}
+.bn .big{font-size:22cqw;font-weight:900;line-height:1;letter-spacing:-.04em;color:#0b7a4b}
+.bn.dark .big{color:var(--neon)}
+
+/* formats */
+.frames{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+@media (max-width:760px){.frames{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.fr{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:6px;font-size:13px;min-width:0}
+.fr .t{font-family:var(--f-mono);font-size:11px;color:var(--brand)}
+.fr .c{font-family:var(--f-display);font-weight:800;font-size:14.5px;line-height:1.35}
+.spec td:first-child{font-weight:700;white-space:nowrap}
+
+/* checklist */
+.check{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.ck{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.ck h3{font-size:15px}
+.ok{color:var(--brand);font-weight:700}.ng{color:var(--warn);font-weight:700}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+</style>
+
+<div class="wrap">
+
+<header>
+  <span class="eyebrow">Meta Ads · Creative SB · 2026.10</span>
+  <h1>라보에이치 두피강화 클리닉 3종<br>GLP-1 사용자 소구 배너 기획안</h1>
+  <p class="muted">광고주 요청: GLP-1 계열 비만치료제 사용자 대상 만족도 조사 결과를 중심으로, 두피강화 3종(샴푸·트리트먼트·헤어앰플)이 함께 노출되도록 기획. 소구점 5개로 카피를 나누고, 각 소구점의 4:5 피드 목업과 카피 옵션을 정리했습니다.</p>
+  <div class="meta-row">
+    <span class="tag">피드 1:1 · 4:5</span><span class="tag">스토리·릴스 9:16</span><span class="tag">캐러셀 5장</span><span class="tag">소구점 5종 A/B</span>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Key Message</span><h2>광고주 지정 메시지</h2></div>
+  <div class="key">
+    <p class="q"><mark>GLP-1 계열 비만치료제 사용자 대상 테스트 완료</mark></p>
+    <p class="q">체중 감량으로 인한 모발 컨디션 변화?<br>라보에이치로 모발 자신감은 그대로!</p>
+    <small>모든 소재에 위 두 메시지 중 하나 이상을 헤드라인 또는 뱃지로 반드시 노출 · 3종 제품컷 전 소재 공통 노출</small>
+  </div>
+  <div class="grid2">
+    <div class="box">
+      <h3>타겟</h3>
+      <ul>
+        <li>메인: 25–45세, 다이어트·체중관리 관심사 + 두피/탈모 케어 관심사 교집합</li>
+        <li>서브: 기존 라보에이치 구매·방문자 리타겟 (신규 메시지로 재구매/교차구매 유도)</li>
+        <li>제외: 처방약·질환 기반 타겟팅은 Meta 정책상 불가하므로 관심사 기반으로만 설정</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>상세페이지 활용 소스</h3>
+      <ul>
+        <li>상단 "GLP-1 계열 비만치료제 사용자도 만족한 라보에이치" 섹션 + 94% 뱃지</li>
+        <li>GLP-1 만족도 조사 결과 바 그래프 (100% / 94.3% / 91.4% / 91.4%)</li>
+        <li>하단 "두피&amp;모발 강화 루틴" 3종 제품 단체컷</li>
+        <li>POINT: 1등 두피샴푸, 압도적 개선 효과(3배), 이중 두피장벽, 크림필 샴푸, AFTER 모발컷</li>
+      </ul>
+    </div>
+  </div>
+  <p class="flag">수치와 문항명은 전달받은 상세페이지 이미지(저해상도)에서 읽은 값입니다. 제작 전 고해상도 원본과 시험 성적서로 수치·문항명·시험 조건(기관, 기간, 대상자 수)을 확인해 주세요. 아래 표에서 [ ]로 표시한 부분이 확인 대상입니다.</p>
+</section>
+
+<!-- ===================== ANGLE 1 ===================== -->
+<section>
+  <div class="sec-head"><span class="eyebrow">Angle by Angle</span><h2>소구점별 배너 기획</h2></div>
+
+  <article class="angle">
+    <div class="angle-head"><span class="no">A</span><h3>신뢰 · GLP-1 사용자 테스트 완료</h3><span class="prio">메인 · 우선 집행</span></div>
+    <div class="mock-col">
+      <div class="bn" role="img" aria-label="A안 4:5 배너 목업">
+        <span class="badge">GLP-1 USER TESTED</span>
+        <div class="hl">GLP-1 계열<br>비만치료제 사용자<br><em>테스트 완료</em></div>
+        <div class="sub">라보에이치 두피강화 클리닉 3종</div>
+        <div class="stage"><div class="p-sh"></div><div class="p-tr"></div><div class="p-am"></div>
+        </div>
+        <div class="seal">만족도<b>[94%]</b></div>
+        <div class="foot"><span>*GLP-1 계열 비만치료제 사용자 대상 [n명·기간] 사용감 설문</span><b>테스트 결과 보기</b></div>
+      </div>
+      <span class="mock-cap">4:5 피드 목업 · 1080×1350</span>
+    </div>
+    <div class="copy">
+      <p>소구 의도: "실제 그 사람들이 써봤다"는 사실 자체가 가장 강한 신규 메시지입니다. 수치보다 <b>테스트 완료</b> 사실을 먼저 크게 보여주고, 수치는 씰로 보조합니다.</p>
+      <div class="tbl-wrap"><table>
+        <tr><th>구분</th><th>카피 옵션</th></tr>
+        <tr><td class="lab">메인</td><td class="opt">
+          <span><b>A-1</b>GLP-1 계열 비만치료제 사용자 대상 테스트 완료</span>
+          <span><b>A-2</b>비만치료제 사용자들이 직접 써보고 답했습니다</span>
+          <span><b>A-3</b>다이어트 중 두피 케어, 테스트로 확인했습니다</span></td></tr>
+        <tr><td class="lab">서브</td><td>두피강화 클리닉 3종 · 샴푸 · 트리트먼트 · 헤어앰플</td></tr>
+        <tr><td class="lab">뱃지</td><td>GLP-1 USER TESTED / 사용자 테스트 완료</td></tr>
+        <tr><td class="lab">CTA</td><td>테스트 결과 보기 (버튼: 더 알아보기)</td></tr>
+        <tr><td class="lab">본문</td><td>GLP-1 계열 비만치료제 사용자를 대상으로 라보에이치 두피강화 3종 사용 테스트를 진행했어요. 결과는 상세페이지에서 바로 확인하세요.</td></tr>
+        <tr><td class="lab">헤드라인</td><td>비만치료제 사용자 대상 테스트 완료</td></tr>
+      </table></div>
+      <div class="visual"><strong>비주얼 가이드</strong>상세페이지 상단 GLP-1 섹션 컷(3종 반사 바닥 연출)을 그대로 활용. 배경 라이트그레이, 뱃지·씰만 네온그린으로 포인트.</div>
+    </div>
+  </article>
+
+  <!-- ===================== ANGLE 2 ===================== -->
+  <article class="angle">
+    <div class="angle-head"><span class="no">B</span><h3>공감 · 체중 감량 후 모발 컨디션 변화</h3><span class="prio">메인 · 우선 집행</span></div>
+    <div class="mock-col">
+      <div class="bn dark" role="img" aria-label="B안 4:5 배너 목업">
+        <span class="badge">체중 감량 후 모발 컨디션 변화?</span>
+        <div class="hl">체중은 가볍게<br>모발 자신감은<br><em>그대로</em></div>
+        <div class="sub">GLP-1 계열 비만치료제 사용자 대상 테스트 완료</div>
+        <div class="stage"><div class="p-sh"></div><div class="p-tr"></div><div class="p-am"></div></div>
+        <div class="foot"><span>LABO-H 두피강화 클리닉 3종</span><b>지금 확인하기</b></div>
+      </div>
+      <span class="mock-cap">4:5 피드 목업 · 1080×1350</span>
+    </div>
+    <div class="copy">
+      <p>소구 의도: 광고주 지정 문장을 가장 직접적으로 쓰는 안. 질문형 훅으로 멈추게 하고, 해결은 <b>"자신감은 그대로"</b>로 긍정 마무리합니다. 개인을 지칭하는 2인칭("당신의", "~하고 계신가요")은 쓰지 않습니다.</p>
+      <div class="tbl-wrap"><table>
+        <tr><th>구분</th><th>카피 옵션</th></tr>
+        <tr><td class="lab">메인</td><td class="opt">
+          <span><b>B-1</b>체중 감량으로 인한 모발 컨디션 변화? 라보에이치로 모발 자신감은 그대로! <span class="muted">(광고주 원문)</span></span>
+          <span><b>B-2</b>체중은 가볍게, 모발 자신감은 그대로</span>
+          <span><b>B-3</b>몸은 가벼워져도, 모발 볼륨은 지키는 루틴</span>
+          <span><b>B-4</b>다이어트 기간, 두피 컨디션도 함께 챙기세요</span></td></tr>
+        <tr><td class="lab">서브</td><td>GLP-1 계열 비만치료제 사용자 대상 테스트 완료</td></tr>
+        <tr><td class="lab">CTA</td><td>지금 확인하기 (버튼: 쇼핑하기)</td></tr>
+        <tr><td class="lab">본문</td><td>체중 감량 중 달라지는 모발 컨디션, 두피부터 챙겨야 할 때. GLP-1 계열 비만치료제 사용자 대상 테스트를 마친 라보에이치 두피강화 3종으로 모발 자신감은 그대로 지켜요.</td></tr>
+        <tr><td class="lab">헤드라인</td><td>체중은 가볍게, 모발 자신감은 그대로</td></tr>
+      </table></div>
+      <div class="visual"><strong>비주얼 가이드</strong>상세페이지 AFTER 섹션(그린 배경 긴 생머리 뒷모습) 또는 딥그린 그라데이션 + 3종 제품컷. 체중계·줄자·전후 체형 비교 이미지는 사용하지 않습니다.</div>
+    </div>
+  </article>
+
+  <!-- ===================== ANGLE 3 ===================== -->
+  <article class="angle">
+    <div class="angle-head"><span class="no">C</span><h3>증명 · 만족도 수치</h3><span class="prio">서브 · 리타겟 우선</span></div>
+    <div class="mock-col">
+      <div class="bn dark" role="img" aria-label="C안 4:5 배너 목업">
+        <span class="badge">GLP-1 계열 비만치료제 사용자 만족도</span>
+        <div class="hl">써본 사람들이<br><em>먼저 답했습니다</em></div>
+        <div class="bars">
+          <div class="bar"><span>[문항 1]</span><b>100%</b></div>
+          <div class="bar"><span>[문항 2]</span><b>94.3%</b></div>
+          <div class="bar"><span>[문항 3]</span><b>91.4%</b></div>
+          <div class="bar"><span>[문항 4]</span><b>91.4%</b></div>
+        </div>
+        <div class="stage" style="padding-bottom:11cqw"></div>
+        <div class="foot"><span>*[시험기관·기간·n명] 주관적 사용감 설문</span><b>결과 자세히 보기</b></div>
+      </div>
+      <span class="mock-cap">4:5 피드 목업 · 1080×1350 (3종컷은 우하단 배치)</span>
+    </div>
+    <div class="copy">
+      <p>소구 의도: 이미 브랜드를 아는 리타겟 모수에게 수치로 확신을 줍니다. 상세페이지의 블랙 바 그래프 섹션을 그대로 소재화하면 클릭 후 랜딩에서 같은 장면을 다시 보게 되어 연결감이 좋습니다.</p>
+      <div class="tbl-wrap"><table>
+        <tr><th>구분</th><th>카피 옵션</th></tr>
+        <tr><td class="lab">메인</td><td class="opt">
+          <span><b>C-1</b>GLP-1 계열 비만치료제 사용자 [94]% 만족</span>
+          <span><b>C-2</b>써본 사람들이 먼저 답했습니다</span>
+          <span><b>C-3</b>[문항 1] 100%, 숫자로 확인한 두피 케어</span></td></tr>
+        <tr><td class="lab">서브</td><td>라보에이치 두피강화 3종 사용 후 만족도 조사 결과</td></tr>
+        <tr><td class="lab">CTA</td><td>결과 자세히 보기</td></tr>
+        <tr><td class="lab">본문</td><td>GLP-1 계열 비만치료제 사용자 대상 조사에서 [문항 1] 100%, [문항 2] 94.3%. 라보에이치 두피강화 3종의 만족도를 숫자로 확인하세요.</td></tr>
+        <tr><td class="lab">헤드라인</td><td>사용자 [94]%가 만족한 두피 루틴</td></tr>
+      </table></div>
+      <p class="flag">상단 히어로의 94%와 바 그래프의 94.3%가 같은 문항인지 확인 필요. 다른 문항이면 소재마다 어떤 수치를 쓸지 하나로 정해야 상세페이지와 어긋나지 않습니다.</p>
+    </div>
+  </article>
+
+  <!-- ===================== ANGLE 4 ===================== -->
+  <article class="angle">
+    <div class="angle-head"><span class="no">D</span><h3>루틴 · 두피강화 클리닉 3종</h3><span class="prio sub">서브 · 객단가 확대</span></div>
+    <div class="mock-col">
+      <div class="bn green" role="img" aria-label="D안 4:5 배너 목업">
+        <span class="badge">GLP-1 계열 비만치료제 사용자 테스트 완료</span>
+        <div class="hl">집에서 끝내는<br><em>두피강화 클리닉</em></div>
+        <div class="steps">
+          <div><i>STEP 1</i>샴푸<br>세정</div>
+          <div><i>STEP 2</i>트리트먼트<br>영양</div>
+          <div><i>STEP 3</i>헤어앰플<br>집중 케어</div>
+        </div>
+        <div class="stage"><div class="p-sh"></div><div class="p-tr"></div><div class="p-am"></div></div>
+        <div class="foot"><span>LABO-H 두피&amp;모발 강화 루틴</span><b>3종 세트 보기</b></div>
+      </div>
+      <span class="mock-cap">4:5 피드 목업 · 1080×1350</span>
+    </div>
+    <div class="copy">
+      <p>소구 의도: 단품이 아닌 3종 루틴으로 구매하도록 유도합니다. "클리닉"이라는 단어로 홈케어지만 전문 관리 느낌을 주고, 세트 구성이나 프로모션이 있으면 이 안에 붙입니다.</p>
+      <div class="tbl-wrap"><table>
+        <tr><th>구분</th><th>카피 옵션</th></tr>
+        <tr><td class="lab">메인</td><td class="opt">
+          <span><b>D-1</b>집에서 끝내는 두피강화 클리닉 3STEP</span>
+          <span><b>D-2</b>씻고, 채우고, 집중 케어까지. 두피강화 3종 루틴</span>
+          <span><b>D-3</b>다이어트 기간엔 두피도 3단계로</span></td></tr>
+        <tr><td class="lab">서브</td><td>GLP-1 계열 비만치료제 사용자 대상 테스트 완료 · 샴푸 + 트리트먼트 + 헤어앰플</td></tr>
+        <tr><td class="lab">CTA</td><td>3종 세트 보기 / [세트 할인 문구]</td></tr>
+        <tr><td class="lab">본문</td><td>샴푸로 세정하고, 트리트먼트로 채우고, 헤어앰플로 집중 케어. GLP-1 계열 비만치료제 사용자 테스트를 마친 라보에이치 두피강화 3종 루틴을 만나보세요.</td></tr>
+        <tr><td class="lab">헤드라인</td><td>두피강화 클리닉 3종, 한 번에</td></tr>
+      </table></div>
+      <div class="visual"><strong>비주얼 가이드</strong>상세페이지 마지막 "두피&amp;모발 강화 루틴" 3종 단체컷 활용. 각 제품 위 STEP 라벨. 헤어앰플 정식 제품명과 단계별 역할 문구는 광고주 확인 후 반영.</div>
+    </div>
+  </article>
+
+  <!-- ===================== ANGLE 5 ===================== -->
+  <article class="angle">
+    <div class="angle-head"><span class="no">E</span><h3>제품력 · 1등 두피샴푸 / 2세대 업그레이드</h3><span class="prio sub">서브 · 브랜드 신뢰</span></div>
+    <div class="mock-col">
+      <div class="bn" role="img" aria-label="E안 4:5 배너 목업">
+        <span class="badge">GLP-1 계열 비만치료제 사용자 테스트 완료</span>
+        <div class="hl">실제 고객이 인정한<br><em>1등 두피샴푸</em></div>
+        <div class="sub">2세대 두피강화 샴푸로 업그레이드</div>
+        <div class="stage" style="justify-content:space-between;align-items:flex-end">
+          <div style="display:flex;flex-direction:column;gap:1cqw;font-family:var(--f-body);font-size:3cqw;font-weight:700">
+            <span>[두피 지표]</span><span class="big">3배</span><span>[기간] 사용 후 개선</span>
+          </div>
+          <div style="display:flex;align-items:flex-end;gap:2cqw"><div class="p-sh"></div><div class="p-tr"></div><div class="p-am"></div></div>
+        </div>
+        <div class="foot"><span>*[1등 출처·기간] / *[시험기관·조건]</span><b>제품 자세히 보기</b></div>
+      </div>
+      <span class="mock-cap">4:5 피드 목업 · 1080×1350</span>
+    </div>
+    <div class="copy">
+      <p>소구 의도: GLP-1 메시지를 처음 보는 사람에게 "원래 잘 되는 제품"이라는 바탕을 깔아줍니다. GLP-1 문구는 뱃지로만 두고, 헤드라인은 상세페이지 POINT 섹션 문구를 씁니다.</p>
+      <div class="tbl-wrap"><table>
+        <tr><th>구분</th><th>카피 옵션</th></tr>
+        <tr><td class="lab">메인</td><td class="opt">
+          <span><b>E-1</b>실제 고객들이 인정한 1등 두피샴푸</span>
+          <span><b>E-2</b>더 강해진 2세대 두피강화 샴푸</span>
+          <span><b>E-3</b>이중 두피장벽 강화 솔루션</span>
+          <span><b>E-4</b>[두피 지표] 3배, 압도적 개선 효과</span></td></tr>
+        <tr><td class="lab">서브</td><td>약산성 · 비건 두피강화 샴푸 · 크림필 제형 / GLP-1 계열 비만치료제 사용자 테스트 완료</td></tr>
+        <tr><td class="lab">CTA</td><td>제품 자세히 보기</td></tr>
+        <tr><td class="lab">본문</td><td>실제 고객들이 인정한 라보에이치 두피강화 샴푸가 2세대로 업그레이드됐어요. 이중 두피장벽 케어에 GLP-1 계열 비만치료제 사용자 테스트까지 마쳤습니다.</td></tr>
+        <tr><td class="lab">헤드라인</td><td>2세대 두피강화 샴푸, 라보에이치</td></tr>
+      </table></div>
+      <p class="flag">"1등"은 출처(채널·카테고리·기간)를, "3배"는 측정 항목과 시험 조건을 소재 하단에 반드시 표기해야 합니다. 상세페이지 원문 각주를 그대로 옮겨 주세요.</p>
+    </div>
+  </article>
+</section>
+
+<!-- ===================== FORMATS ===================== -->
+<section>
+  <div class="sec-head"><span class="eyebrow">Formats</span><h2>캐러셀 · 릴스 구성</h2></div>
+
+  <h3>캐러셀 5장 (A+B+C+D 결합형)</h3>
+  <div class="frames">
+    <div class="fr"><span class="t">01 · 훅</span><span class="c">체중 감량으로 인한 모발 컨디션 변화?</span><span class="muted">딥그린 배경 + 모발 뒷모습 컷</span></div>
+    <div class="fr"><span class="t">02 · 신뢰</span><span class="c">GLP-1 계열 비만치료제 사용자 대상 테스트 완료</span><span class="muted">상세 GLP-1 섹션 + 3종컷</span></div>
+    <div class="fr"><span class="t">03 · 증명</span><span class="c">[문항 1] 100% · [문항 2] 94.3%</span><span class="muted">블랙 바 그래프 섹션</span></div>
+    <div class="fr"><span class="t">04 · 루틴</span><span class="c">샴푸 → 트리트먼트 → 헤어앰플</span><span class="muted">3종 STEP 컷</span></div>
+    <div class="fr"><span class="t">05 · 마무리</span><span class="c">모발 자신감은 그대로, 라보에이치</span><span class="muted">3종 단체컷 + CTA</span></div>
+  </div>
+
+  <h3>릴스·스토리 15초 (9:16)</h3>
+  <div class="frames">
+    <div class="fr"><span class="t">0–2s · 훅</span><span class="c">체중은 줄었는데, 모발 컨디션은?</span><span class="muted">모발 뒷모습 클로즈업, 자막 크게</span></div>
+    <div class="fr"><span class="t">2–5s · 전환</span><span class="c">GLP-1 계열 비만치료제 사용자 대상 테스트 완료</span><span class="muted">뱃지 팝업 + 3종 등장</span></div>
+    <div class="fr"><span class="t">5–9s · 증명</span><span class="c">만족도 100% · 94.3% · 91.4%</span><span class="muted">바 그래프 차오르는 모션</span></div>
+    <div class="fr"><span class="t">9–13s · 사용</span><span class="c">샴푸 → 트리트먼트 → 헤어앰플</span><span class="muted">크림필 거품·텍스처 컷</span></div>
+    <div class="fr"><span class="t">13–15s · CTA</span><span class="c">모발 자신감은 그대로</span><span class="muted">3종 단체컷 + 로고 + 버튼</span></div>
+  </div>
+  <p class="muted" style="font-size:13px">9:16은 상하단 각 약 14%(250px)를 UI 안전 영역으로 비우고 카피·제품은 중앙 1080×1420 안에 배치합니다.</p>
+
+  <h3>사이즈·텍스트 규격</h3>
+  <div class="tbl-wrap"><table class="spec">
+    <tr><th>포맷</th><th>사이즈</th><th>권장 소구점</th><th>비고</th></tr>
+    <tr><td>피드 4:5</td><td>1080×1350</td><td>A · B · C · D · E 전체</td><td>메인 테스트 사이즈</td></tr>
+    <tr><td>피드 1:1</td><td>1080×1080</td><td>A · B</td><td>4:5 리사이즈, 카피 2줄 이내로 축약</td></tr>
+    <tr><td>스토리·릴스 9:16</td><td>1080×1920</td><td>B (훅) → A → C</td><td>15초 영상 또는 정적 3컷</td></tr>
+    <tr><td>캐러셀</td><td>1080×1080 ×5</td><td>결합형</td><td>카드별 랜딩을 상세페이지 해당 섹션 앵커로 연결</td></tr>
+    <tr><td>본문 / 헤드라인</td><td>본문 첫 줄 40자 내외 · 헤드라인 25자 내외</td><td>—</td><td>더보기 전에 핵심이 보이도록 첫 줄에 GLP-1 문구</td></tr>
+  </table></div>
+</section>
+
+<!-- ===================== TEST ===================== -->
+<section>
+  <div class="sec-head"><span class="eyebrow">Test Plan</span><h2>집행 제안</h2></div>
+  <div class="grid2">
+    <div class="box"><h3>1차 (런칭 2주)</h3><p>A vs B 메인 소구 테스트. 4:5 정적 각 2종(카피 옵션 1·2) + 릴스 1종. 신규 모수 대상 CTR과 랜딩 후 상세페이지 GLP-1 섹션 도달률로 승자 결정.</p></div>
+    <div class="box"><h3>2차</h3><p>승리 소구점에 C(수치) 결합 버전과 D(루틴) 결합 버전 추가. 리타겟 모수에는 C와 D를 우선 노출해 3종 세트 전환을 노립니다. E는 브랜드 인지가 낮은 신규 모수용 보조 소재로 운영합니다.</p></div>
+  </div>
+</section>
+
+<!-- ===================== CHECKLIST ===================== -->
+<section>
+  <div class="sec-head"><span class="eyebrow">Compliance</span><h2>제작·심의 체크리스트</h2><p class="muted">GLP-1 소구는 처방의약품과 체중 감량을 함께 다루기 때문에 Meta 광고 정책과 국내 광고 규정 모두에서 걸리기 쉽습니다. 최종 소재는 광고주 법무·심의 검토를 거쳐 집행해 주세요.</p></div>
+  <div class="check">
+    <div class="ck"><h3>처방의약품 제품명 표기 금지</h3><p><span class="ng">X</span> 위고비 · 마운자로 사용자 테스트 완료</p><p><span class="ok">O</span> GLP-1 계열 비만치료제 사용자 대상 테스트 완료</p><p class="muted">전문의약품 제품명이 대중 광고에 노출되면 약사법상 전문의약품 광고로 해석될 수 있고, Meta 처방약 광고 정책에도 걸립니다. 브리프의 제품명은 내부 참고용으로만 씁니다.</p></div>
+    <div class="ck"><h3>개인 특성 단정 금지 (Meta)</h3><p><span class="ng">X</span> 비만치료제 맞고 계신가요? / 당신의 빠지는 머리카락</p><p><span class="ok">O</span> 체중 감량으로 인한 모발 컨디션 변화?</p><p class="muted">보는 사람의 건강 상태·약 복용을 짐작하는 2인칭 표현은 반려 사유입니다. 현상을 일반 문장으로 서술합니다.</p></div>
+    <div class="ck"><h3>체중·체형 이미지 금지</h3><p><span class="ng">X</span> 체형 전후 비교, 줄자·체중계, 신체 부위 클로즈업</p><p><span class="ok">O</span> 제품컷, 모발 뒷모습, 텍스처컷</p><p class="muted">Meta는 체중 감량 관련 전후 이미지와 부정적 신체 이미지를 제한합니다.</p></div>
+    <div class="ck"><h3>효능 표현 범위</h3><p><span class="ng">X</span> GLP-1 탈모 해결 / 탈모 치료 / 탈모 예방</p><p><span class="ok">O</span> 두피 강화 · 모발 컨디션 · 탈모 증상 완화에 도움 (기능성 인증 범위 내)</p><p class="muted">비만치료제로 인한 탈모를 치료한다는 인과 표현은 쓰지 않습니다.</p></div>
+    <div class="ck"><h3>수치·최상급 근거 표기</h3><p>만족도: "주관적 사용감 설문" + 시험기관·기간·대상자 수</p><p>1등 · 3배: 출처와 측정 조건</p><p class="muted">각주는 소재 하단에 읽을 수 있는 크기로 넣고, 상세페이지 각주와 문구를 일치시킵니다.</p></div>
+    <div class="ck"><h3>광고주 확인 요청 항목</h3><p>① 고해상도 상세페이지 원본 · 만족도 문항명 4개<br>② 94%와 94.3%의 관계<br>③ "헤앰" 정식 제품명 · 3종 세트 구성/프로모션<br>④ 시험 성적서 각주 원문</p></div>
+  </div>
+</section>
+
+<footer>애드이피션시 · 라보에이치 GLP-1 메타 배너 SB v1 · 2026.10.14 · 목업은 레이아웃 참고용이며 실제 제품컷은 상세페이지 원본 이미지로 교체합니다. 생성된 문서는 사내 검토 후 광고주에 전달해 주세요.</footer>
+</div>
